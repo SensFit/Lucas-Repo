@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(250, 244, 235);
+}
+#div_container{
+  
+   /*
+    justify na horizontal
+    aligin vertical
+    width tamanho horizontal
+    height tamanho vertical
+    margin: auto;
+    background-color: antiquewhite;
+    border: solid 2px black;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+    */
+
+    width: 50%;
+    height: 280px;
+    margin: auto;
+    background-color: aliceblue;
+    border: 2px black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#div_input{
+    display: flex;
+    justify-content: end;
+}
+
+#div_containerResposta{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+   
+    
+
+}
+
+#div_resposta1{
+
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border: 100px black;
+
+    display: flex;
+    justify-content: center;
+
+}

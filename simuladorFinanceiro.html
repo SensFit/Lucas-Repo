@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simulador Financeiro</h1>
+
+    <p> Os dados fornecidos irão simular com dados e estatisticas o do porque uma gestão de informações com sensores irá impulsionar a getsão da sua academia</p>
+
+ 
+
+    <section>
+        
+
+        <div id="div_container">
+            <h2>Vamos analisar a academia</h2>
+
+            Digite o número de equipamentos quebrados na academia:
+            <div id="div_input">
+            <input type="text" id="input_qtdEquipamentos">
+            </div>
+
+            Digite o número de usos do seu equipamento no mês:
+            <div id="div_input">
+                <input type="text" id="input_qtdUsoEquipamento">
+                <br>
+            </div>
+
+            Data da instalação do equipamento (em anos):
+            <div id="div_input">
+            <input type="text" id="input_dtInstalacao">
+            <br>
+            </div>
+
+            Digite se o equipamento foi verificado hoje:
+            <div id="div_input">
+            <input type="text" id="input_verificacaoEquipamento">
+            <br>
+            </div>
+
+            Digite o tipo de manutenção (preventiva ou normal)
+            <div id="div_input">
+                <input type="text" id="input_tipoManutencao">
+                <br>
+            </div>
+
+            <button onclick="analisar()">
+                Analise
+            </button>
+        </div>
+
+        <div id="div_containerResposta">
+
+            <div id="div_reposta2">
+                <div id="div_usoTotal"></div>
+                <div id="div_manutencao"></div>
+            </div>
+
+            <div id="div_reposta1">
+                <div id="div_explicacao"></div>
+                <div id="div_exibirAnalise"></div>
+            </div>
+            
+        </div>
+
+    </section>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+
+        var qtdUso = Number(input_qtdUsoEquipamento.value)
+        var dtIntalacao = Number(input_dtInstalacao.value)
+        var verificacao = input_verificacaoEquipamento.value
+        var qtdEquipamento = Number(input_qtdEquipamentos.value)
+        var calculoManutencao = (300 * qtdEquipamento) * 12
+        var manutencao = input_tipoManutencao.value
+       
+
+        div_usoTotal.innerHTML = `  O uso total do seu equipamento foi de ${qtdUso},
+                                    <br> Segundo a revista ciencia do esporte 
+                                    quase 15% dos alunos desistem da academia <br> por conta do lotamento 
+                                    e/ou qualidade dos aparelhos. <br> <br>
+                                    Com o nosso equipamento, será possível extrair os dados do trafego de pessoas e a 
+                                    data da ultima verifiação do equipamento pode ser administrada
+                                    <br> A pesquisa da Equipa Academia concluiu que academias que não fazem manutenção preventiva <br>
+                                    possuem turn-over de 82%. Já as academias que realizam o procedimento conquistam seu público e 
+                                    apresentam taxas de turn-over em torno de 37% apenas. <br>`
+
+
+        if(manutencao == 'normal'){
+           div_manutencao.innerHTML = ` <br> A manutenção de equipamentos como esteira
+                                        escada e entre outros cerca de R$300 cada, com a quantidade de equipamentos da sua academia<br>
+                                        ficaria aproximadamente R$${calculoManutencao} multiplicado por 12 que seria uma media desses <br>
+                                        equipamentos quebrados por mês.`
+        }
+        if(manutencao == 'preventiva'){
+            div_manutencao.innerHTML = `<br>O preço de uma manutenção preventiva dependendo do tamanho da academia
+                                        fica em cerca de R$1000 reais por mês, podendo ou não ser maior que a normal, <br>
+                                        porém causa menos transtorno e fatoramento fazendo com que os equipamentos <br>
+                                        difícilmente parem de funcionar.`
+        }
+
+        div_explicacao.innerHTML = `<br> Dessa forma com os nossos sensores e aplicação será possível ter esse tipo de informação 
+                                    pela intenet de forma ágil, fazendo com que  
+                                    a manutenção preventiva preserve seus equipamentos e seu fatoramento. `
+                                    
+
+        var vidaUtil = 3
+        /*
+        Escreva caso a manutenção preventiva não seja feita a média de equipamentos quebrados é de 2 por mês
+        */
+
+        if(verificacao == 'não'){
+            alert(`Equipamento não foi verificado, necessária verficação`)
+        }
+
+        div_exibirAnalise.innerHTML = ` <br> vamos supor que ${vidaUtil} anos é o tempo de vida útil do seu equipamento,
+                                        com o nosso programa, será possível pela aplicação verificar, <br>
+                                         a data de verificação do equipamento
+                                        o tempo de vida útil e o uso de equipamentos por dia.`
+        
+    }
+    
+   
+
+
+
+
+</script>
